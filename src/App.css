@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@900&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
+}
+.app-comp {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  align-items: center;
+  text-align: center;
+}

@@ -7,7 +7,10 @@ function Details({
         <div>
             From Details
           {films.map(film => (
-                <div key={film._id} >{film.properties.title}</div>
+              <div key={film._id}>
+                  <h4 >{film.properties.title}</h4>
+                  <div>{film.properties.opening_crawl}</div>
+              </div>
 
             ))}
         </div>

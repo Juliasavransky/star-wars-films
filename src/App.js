@@ -17,13 +17,14 @@ function App() {
   }, []);
 
   return (
-    <div >
-      <Toc 
-      films={films}
+    <div className="app-comp">
+      <Toc
+        films={films}
       />
+
       <Details
-      films={films}
-       />
+        films={films}
+      />
     </div>
   );
 }
