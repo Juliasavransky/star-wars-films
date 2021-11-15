@@ -2,7 +2,9 @@ import React from 'react'
 
 function Details({
     films,
-    selectedFilm
+    selectedFilm,
+    selectedFavorite,
+    handleSelectFavorite
 }) {
     const filmToRender = films.filter(film => film._id === selectedFilm);
     console.log(selectedFilm);
@@ -29,7 +31,6 @@ function Details({
                             <h4 >{film.properties.title}</h4>
                             <div>{film.properties.opening_crawl}</div>
                         </div>
-
                     ))}
 
                 </div>

@@ -3,11 +3,14 @@ import React, { useEffect, useState } from 'react';
 import Toc from './components/Toc';
 import Details from './components/Details';
 import axios from 'axios';
+import useLocalStorage from './utils/localStorageHook';
+
 
 
 function App() {
   const [films, setFilms] = useState([]);
-  const [selectedFilm, setSelectedFilm] = useState([]);
+  const [selectedFavorite, setSelectedFavorite] = useLocalStorage("selectedFavorite", []);
+  const [selectedFilm, setSelectedFilm] = useState(selectedFavorite);  
 
 
   useEffect(() => {
@@ -22,6 +25,10 @@ function App() {
     setSelectedFilm(id)
     console.log(selectedFilm)
   }
+  const handleSelectFavorite = (id) => {
+    setSelectedFavorite(id)
+    console.log("setSelectedFavorite",id)
+  }
 
   return (
     <div className="app-comp">
@@ -33,6 +40,8 @@ function App() {
       <Details
         films={films}
         selectedFilm={selectedFilm}
+        handleSelectFavorite={handleSelectFavorite}
+        selectedFavorite={selectedFavorite}
       />
     </div>
   );
