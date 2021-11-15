@@ -6,10 +6,46 @@
   box-sizing: border-box;
   font-family: 'Roboto Mono', monospace;
 }
+:root {
+  --textSize: 1.5rem;
+  --hadingSize: 3rem;
+}
 .app-comp {
   display: flex;
   justify-content: space-around;
   margin-top: 2rem;
   align-items: center;
   text-align: center;
+}
+
+/* **************** TOC-CARDS *************************** */
+
+.toc-comp_card {
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: 0.125em solid green;
+  padding: 0.5em 1.25em;
+  border-radius: 0.25em;
+  padding: 1rem;
+  margin: 2rem 0;
+}
+
+/* *********************details content*********************** */
+.details-comp {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #fac517;
+}
+
+.details-comp_content h4,
+.details-comp_heading {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.details-comp_content div {
+  font-size: 1.5rem;
+  text-align: justify;
 }

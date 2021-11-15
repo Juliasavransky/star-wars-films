@@ -5,10 +5,16 @@ function Toc({
     handleSelect
 }) {
     return (
-        <div>
-            From Toc
+        <div
+            className="toc-comp"
+        >
             {films.map(film => (
-                <li onClick={() => handleSelect(film._id)} key={film._id} >{film.properties.title}</li>
+                <div 
+                className="toc-comp_card"
+                    onClick={() => handleSelect(film._id)}
+                    key={film._id} >
+                    {film.properties.title}
+                </div>
 
             ))}
         </div>
