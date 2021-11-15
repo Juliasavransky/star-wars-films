@@ -7,6 +7,8 @@ import axios from 'axios';
 
 function App() {
   const [films, setFilms] = useState([]);
+  const [selectedFilm, setSelectedFilm] = useState([]);
+
 
   useEffect(() => {
     axios.get('https://www.swapi.tech/api/films/')
@@ -16,14 +18,21 @@ function App() {
       }).catch(err => console.error(err, "Error!!!"))
   }, []);
 
+  const handleSelect = (id) => {
+    setSelectedFilm(id)
+    console.log(selectedFilm)
+  }
+
   return (
     <div className="app-comp">
       <Toc
         films={films}
+        handleSelect={handleSelect}
       />
 
       <Details
         films={films}
+        selectedFilm={selectedFilm}
       />
     </div>
   );
