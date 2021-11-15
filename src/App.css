@@ -14,6 +14,9 @@ body {
   --neon: hsl(85 100% 54%);
   --testSize: 1.3vw;
   --hederSize: 2.5vw;
+
+  --blade-hue: 120;
+  --blade-lightness: 50%;
 }
 img {
   width: 100%;
@@ -139,6 +142,7 @@ img {
 .details-comp_heading {
   font-size: var(--hederSize);
   text-align: center;
+  margin-top: 2rem;
 }
 .details-comp_content_abstract {
   font-size: var(--testSize);
@@ -147,12 +151,18 @@ img {
 }
 /* *********************favorite*********************** */
 .details-comp_content_favorite {
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-image-source: url(https://icons-for-free.com/iconfiles/png/512/r2d2+robot+starwars+icon-1320166698566079188.png);
-  border-image-slice: 490 1;
-  border-image-repeat: repeat;
-  padding: 1rem 3rem;
+  margin: 3rem 0;
+  color: #fac517;
+  animation: favorite 1.3s ease-in-out infinite alternate;
+  text-transform: capitalize;
+}
+@keyframes favorite {
+  from {
+    text-shadow: 0 0 20px var(--neon);
+  }
+  to {
+    text-shadow: 0 0 30px var(--neon), 0 0 10px var(--neon);
+  }
 }
 
 /* *********************@@@media@@@*********************** */

@@ -31,10 +31,14 @@ function Details({
                     {filmToRender.map(film => (
                         <div
                             className={selectedFavorite === film._id
-                                ? "details-comp_content_favorite"
+                                ? "details-comp_content_favorite" 
                                 : "details-comp_content"
                             }
                             key={film._id}>
+                            {selectedFavorite === film._id
+                                ? `This is my favorite!!!`
+                                : ""
+                            }
                             {selectedFavorite !== film._id
                                 ? <div className="btn" onClick={() => handleSelectFavorite(film._id)}>
                                     Select this movie as your favorite </div>
