@@ -4,6 +4,8 @@ import Toc from './components/Toc';
 import Details from './components/Details';
 import axios from 'axios';
 import useLocalStorage from './utils/localStorageHook';
+import logo from './img/swlogo.com.png'
+
 
 
 
@@ -31,18 +33,26 @@ function App() {
   }
 
   return (
-    <div className="app-comp">
-      <Toc
-        films={films}
-        handleSelect={handleSelect}
-      />
+    <div className="stars">
+      <div className="logo">
+        <img
+          src={logo} alt="star wars logo"
+        />
+      </div>
 
-      <Details
-        films={films}
-        selectedFilm={selectedFilm}
-        handleSelectFavorite={handleSelectFavorite}
-        selectedFavorite={selectedFavorite}
-      />
+      <div className="app-comp">
+        <Toc
+          films={films}
+          handleSelect={handleSelect}
+        />
+
+        <Details
+          films={films}
+          selectedFilm={selectedFilm}
+          selectedFavorite={selectedFavorite}
+          handleSelectFavorite={handleSelectFavorite}
+        />
+      </div>
     </div>
   );
 }

@@ -5,10 +5,12 @@
 *::after {
   box-sizing: border-box;
   font-family: 'Roboto Mono', monospace;
+  line-height: 120%;
 }
 :root {
   --textSize: 1.5rem;
   --hadingSize: 3rem;
+  --neon: hsl(85 100% 54%);
 }
 .app-comp {
   display: flex;
@@ -17,17 +19,46 @@
   align-items: center;
   text-align: center;
 }
+img {
+  width: 100%;
+}
 
+/* ****************background**************************** */
+@keyframes move-twinkle {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -5000px 8000px;
+  }
+}
+
+.stars {
+  background: #000 url('./img/stars.png') repeat top center;
+  z-index: 0;
+  animation: move-twinkle 700s linear infinite;
+  height: 100vh;
+}
+
+/* *********************LOGO*********************** */
+.logo {
+    width: 30%;
+     margin: 0 auto;
+     padding: 2rem;
+     filter: invert(70%) sepia(60%) saturate(690%) hue-rotate(354deg)
+       brightness(1.4) contrast(96%);
+   }
 /* **************** TOC-CARDS *************************** */
 
 .toc-comp_card {
-  font-size: 1.5rem;
+  font-size: var(--textSize);
   cursor: pointer;
   border: 0.125em solid green;
   padding: 0.5em 1.25em;
   border-radius: 0.25em;
   padding: 1rem;
   margin: 2rem 0;
+  color:aqua;
 }
 
 /* *********************details content*********************** */
