@@ -1,13 +1,17 @@
 import React from 'react'
 
+
+
 function Details({
     films,
     selectedFilm,
     selectedFavorite,
     handleSelectFavorite
 }) {
+
     const filmToRender = films.filter(film => film._id === selectedFilm);
     console.log(selectedFilm);
+
     return (
         <div className="details-comp">
             <div className="details-comp_heading">
@@ -26,11 +30,20 @@ function Details({
                 >
                     {filmToRender.map(film => (
                         <div
+                            className={selectedFavorite === film._id
+                                ? "details-comp_content_favorite"
+                                : "details-comp_content"
+                            }
                             key={film._id}>
-                           
-                            <h4 >{film.properties.title}</h4>
-                            <div>{film.properties.opening_crawl}</div>
+                            {selectedFavorite !== film._id
+                                ? <div className="btn" onClick={() => handleSelectFavorite(film._id)}>
+                                    Select this movie as your favorite </div>
+                                : ""
+                            }
+                            <div className="details-comp_content_title">{film.properties.title}</div>
+                            <div className="details-comp_content_abstract">{film.properties.opening_crawl}</div>
                         </div>
+
                     ))}
 
                 </div>

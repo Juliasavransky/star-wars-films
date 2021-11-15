@@ -4,25 +4,26 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: 'Roboto Mono', monospace;
   line-height: 120%;
+  font-family: 'Roboto Mono', monospace;
+}
+body {
+  margin: 0;
 }
 :root {
-  --textSize: 1.5rem;
-  --hadingSize: 3rem;
   --neon: hsl(85 100% 54%);
-}
-.app-comp {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 2rem;
-  align-items: center;
-  text-align: center;
+  --testSize: 1.3vw;
+  --hederSize: 2.5vw;
 }
 img {
   width: 100%;
 }
-
+.app-comp {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
 /* ****************background**************************** */
 @keyframes move-twinkle {
   from {
@@ -34,49 +35,173 @@ img {
 }
 
 .stars {
-  background: #000 url('./img/stars.png') repeat top center;
-  z-index: 0;
+  background: #000 url('./img/stars.png') repeat center top;
   animation: move-twinkle 700s linear infinite;
   height: 100vh;
 }
 
 /* *********************LOGO*********************** */
 .logo {
-    width: 30%;
-     margin: 0 auto;
-     padding: 2rem;
-     filter: invert(70%) sepia(60%) saturate(690%) hue-rotate(354deg)
-       brightness(1.4) contrast(96%);
-   }
-/* **************** TOC-CARDS *************************** */
+  width: 25%;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  filter: invert(70%) sepia(60%) saturate(690%) hue-rotate(354deg)
+    brightness(1.4) contrast(96%);
+}
 
+/* ****************BTN & CARDS *************************** */
+.btn {
+  display: inline-block;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.btn,
 .toc-comp_card {
-  font-size: var(--textSize);
+  font-size: var(--testSize);
+  text-align: center;
+  color: var(--neon);
   cursor: pointer;
-  border: 0.125em solid green;
+  border: 0.125em solid var(--neon);
   padding: 0.5em 1.25em;
   border-radius: 0.25em;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.5), 0 0 0.45em var(--neon);
+  box-shadow: inset 0 0 0.5em 0 var(--neon), 0 0 0.5 0 var(--neon);
+  position: relative;
+  transition: background-color 200ms linear;
+}
+.btn::before,
+.btn::after,
+.toc-comp_card::before,
+.toc-comp_card::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+.btn::before,
+.toc-comp_card::before {
+  pointer-events: none;
+  background: var(--neon);
+  top: 70%;
+  width: 100%;
+  height: 100%;
+  transform: perspective(3em) rotateX(30deg) scale(1, 0.35);
+  filter: blur(2em);
+  opacity: 0.7;
+  transition: opacity 200ms linear;
+}
+.btn::after,
+.toc-comp_card::after {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.3em var(--neon);
+  opacity: 0;
+}
+.btn:hover::after,
+.btn:focus::after,
+.toc-comp_card:hover::after,
+.toc-comp_card:focus::after {
+  opacity: 1;
+}
+.btn:hover::before,
+.btn:focus::before,
+.toc-comp_card:hover::before,
+.toc-comp_card:focus::before {
+  opacity: 1;
+}
+.btn:hover,
+.btn:focus,
+.toc-comp_card:hover,
+.toc-comp_card:focus {
+  color: rgb(87, 85, 85);
+  background: var(--neon);
+  text-shadow: none;
+}
+
+/* *********************CARDS*********************** */
+.toc-comp_card {
   padding: 1rem;
-  margin: 2rem 0;
-  color:aqua;
+  margin: 1.5rem 0;
 }
 
 /* *********************details content*********************** */
 .details-comp {
-  width: 40%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   text-align: center;
   color: #fac517;
 }
 
-.details-comp_content h4,
+.details-comp_content,
+.details-comp_content_title,
 .details-comp_heading {
-  font-size: 3rem;
+  font-size: var(--hederSize);
   text-align: center;
-  margin-bottom: 1rem;
 }
-.details-comp_content div {
-  font-size: 1.5rem;
+.details-comp_content_abstract {
+  font-size: var(--testSize);
   text-align: justify;
+  margin-top: 2rem;
+}
+/* *********************favorite*********************** */
+.details-comp_content_favorite {
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-image-source: url(https://icons-for-free.com/iconfiles/png/512/r2d2+robot+starwars+icon-1320166698566079188.png);
+  border-image-slice: 490 1;
+  border-image-repeat: repeat;
+  padding: 1rem 3rem;
+}
+
+/* *********************@@@media@@@*********************** */
+@media screen and (max-width: 1300px) and (min-width: 800px) {
+  .app-comp {
+    justify-content: space-evenly;
+  }
+
+  .btn {
+    margin-bottom: 1.5rem;
+  }
+  .btn,
+  .toc-comp_card {
+    padding: 0.25em 0.75em;
+  }
+  .details-comp_content_abstract {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  html {
+    background-color: #000;
+  }
+  .app-comp {
+    flex-direction: column;
+  }
+  .btn {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+  .logo {
+    width: 40%;
+  }
+  .btn,
+  .toc-comp_card {
+    padding: 0.5em 1.25em;
+    font-size: 1.6vh;
+  }
+  .details-comp {
+    width: 90%;
+  }
+  .details-comp_content,
+  .details-comp_content_title,
+  .details-comp_heading {
+    font-size: 2.5vh;
+  }
+  .details-comp_content_abstract {
+    font-size: 1.5vh;
+    text-align: justify;
+  }
 }

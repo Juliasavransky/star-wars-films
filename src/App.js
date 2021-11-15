@@ -12,7 +12,7 @@ import logo from './img/swlogo.com.png'
 function App() {
   const [films, setFilms] = useState([]);
   const [selectedFavorite, setSelectedFavorite] = useLocalStorage("selectedFavorite", []);
-  const [selectedFilm, setSelectedFilm] = useState(selectedFavorite);  
+  const [selectedFilm, setSelectedFilm] = useState(selectedFavorite);
 
 
   useEffect(() => {
@@ -29,7 +29,7 @@ function App() {
   }
   const handleSelectFavorite = (id) => {
     setSelectedFavorite(id)
-    console.log("setSelectedFavorite",id)
+    console.log("setSelectedFavorite", id)
   }
 
   return (
