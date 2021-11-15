@@ -1,9 +1,15 @@
 import React from 'react'
 
-function Toc() {
+function Toc({
+    films
+}) {
     return (
         <div>
-            HI
+            From Toc
+            {films.map(film => (
+                <li key={film._id} >{film.properties.title}</li>
+
+            ))}
         </div>
     )
 }

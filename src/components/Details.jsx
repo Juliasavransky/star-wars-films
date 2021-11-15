@@ -1,9 +1,15 @@
 import React from 'react'
 
-function Details() {
+function Details({
+    films
+}) {
     return (
         <div>
-            @@@HI
+            From Details
+          {films.map(film => (
+                <div key={film._id} >{film.properties.title}</div>
+
+            ))}
         </div>
     )
 }
