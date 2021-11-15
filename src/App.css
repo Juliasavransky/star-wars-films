@@ -1,3 +1,5 @@
+/* ****************MAIN**************************** */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@900&display=swap');
 
 *,
@@ -7,27 +9,28 @@
   line-height: 120%;
   font-family: 'Roboto Mono', monospace;
 }
+
 body {
   margin: 0;
 }
+
 :root {
   --neon: hsl(85 100% 54%);
   --testSize: 1.3vw;
   --hederSize: 2.5vw;
-
-  --blade-hue: 120;
-  --blade-lightness: 50%;
 }
+
 img {
   width: 100%;
 }
+
 .app-comp {
   display: flex;
   justify-content: space-around;
   align-items: center;
   text-align: center;
 }
-/* ****************background**************************** */
+/* ****************BACKGROUND**************************** */
 @keyframes move-twinkle {
   from {
     background-position: 0 0;
@@ -73,6 +76,7 @@ img {
   position: relative;
   transition: background-color 200ms linear;
 }
+
 .btn::before,
 .btn::after,
 .toc-comp_card::before,
@@ -81,6 +85,7 @@ img {
   position: absolute;
   left: 0;
 }
+
 .btn::before,
 .toc-comp_card::before {
   pointer-events: none;
@@ -93,6 +98,7 @@ img {
   opacity: 0.7;
   transition: opacity 200ms linear;
 }
+
 .btn::after,
 .toc-comp_card::after {
   top: 0;
@@ -101,18 +107,21 @@ img {
   box-shadow: 0 0 2em 0.3em var(--neon);
   opacity: 0;
 }
+
 .btn:hover::after,
 .btn:focus::after,
 .toc-comp_card:hover::after,
 .toc-comp_card:focus::after {
   opacity: 1;
 }
+
 .btn:hover::before,
 .btn:focus::before,
 .toc-comp_card:hover::before,
 .toc-comp_card:focus::before {
   opacity: 1;
 }
+
 .btn:hover,
 .btn:focus,
 .toc-comp_card:hover,
@@ -128,7 +137,7 @@ img {
   margin: 1.5rem 0;
 }
 
-/* *********************details content*********************** */
+/* *********************DETAILS CONTENT *********************** */
 .details-comp {
   width: 50%;
   display: flex;
@@ -149,7 +158,8 @@ img {
   text-align: justify;
   margin-top: 2rem;
 }
-/* *********************favorite*********************** */
+
+/* *********************FAVORITE*********************** */
 .details-comp_content_favorite {
   margin: 3rem 0;
   color: #fac517;
@@ -165,12 +175,11 @@ img {
   }
 }
 
-/* *********************@@@media@@@*********************** */
+/* *********************@@@ MEDIA @@@*********************** */
 @media screen and (max-width: 1300px) and (min-width: 800px) {
   .app-comp {
     justify-content: space-evenly;
   }
-
   .btn {
     margin-bottom: 1.5rem;
   }
@@ -209,6 +218,7 @@ img {
   .details-comp_content_title,
   .details-comp_heading {
     font-size: 2.5vh;
+    margin-top:0;
   }
   .details-comp_content_abstract {
     font-size: 1.5vh;

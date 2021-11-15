@@ -9,8 +9,6 @@ function Toc({
         <div
             className="toc-comp"
         >
-     
-
             {films.map(film => (
                 <div
                     className="toc-comp_card"

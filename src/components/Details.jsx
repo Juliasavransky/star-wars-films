@@ -1,16 +1,13 @@
 import React from 'react'
 
-
-
 function Details({
     films,
-    selectedFilm,
+    displayedFilm,
     selectedFavorite,
     handleSelectFavorite
 }) {
 
-    const filmToRender = films.filter(film => film._id === selectedFilm);
-    console.log(selectedFilm);
+    const filmToRender = films.filter(film => film._id === displayedFilm); // filtering the movies by id
 
     return (
         <div className="details-comp">
@@ -20,10 +17,7 @@ function Details({
                         ? "To learn more, please click on the movie title"
                         : ""
                 }
-
             </div>
-
-
             {
                 <div
                     className="details-comp_content"
@@ -47,9 +41,7 @@ function Details({
                             <div className="details-comp_content_title">{film.properties.title}</div>
                             <div className="details-comp_content_abstract">{film.properties.opening_crawl}</div>
                         </div>
-
                     ))}
-
                 </div>
             }
         </div>

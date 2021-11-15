@@ -10,26 +10,24 @@ import logo from './img/swlogo.com.png'
 
 
 function App() {
-  const [films, setFilms] = useState([]);
-  const [selectedFavorite, setSelectedFavorite] = useLocalStorage("selectedFavorite", []);
-  const [selectedFilm, setSelectedFilm] = useState(selectedFavorite);
+  const [films, setFilms] = useState([]);//films data
+  const [selectedFavorite, setSelectedFavorite] = useLocalStorage("selectedFavorite", []);// Local Storage hook
+  const [displayedFilm, setDisplayedFilm] = useState(selectedFavorite);//state of the selected films
 
 
   useEffect(() => {
     axios.get('https://www.swapi.tech/api/films/')
       .then(res => {
         setFilms(res.data.result)
-        console.log("all the data", res.data.result)
-      }).catch(err => console.error(err, "Error!!!"))
-  }, []);
+      }).catch(err => console.error(err, "Error, couldn't fetch the data from the API"))
+  }, []); // fetching the data from the SWAPI
 
   const handleSelect = (id) => {
-    setSelectedFilm(id)
-    console.log(selectedFilm)
+    setDisplayedFilm(id)
   }
+
   const handleSelectFavorite = (id) => {
     setSelectedFavorite(id)
-    console.log("setSelectedFavorite", id)
   }
 
   return (
@@ -48,7 +46,7 @@ function App() {
 
         <Details
           films={films}
-          selectedFilm={selectedFilm}
+          displayedFilm={displayedFilm}
           selectedFavorite={selectedFavorite}
           handleSelectFavorite={handleSelectFavorite}
         />
