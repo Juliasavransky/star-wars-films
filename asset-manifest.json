@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/star-wars-films/static/css/main.be71bbe1.chunk.css",
+    "main.js": "/star-wars-films/static/js/main.1f418385.chunk.js",
+    "main.js.map": "/star-wars-films/static/js/main.1f418385.chunk.js.map",
+    "runtime-main.js": "/star-wars-films/static/js/runtime-main.43d9769b.js",
+    "runtime-main.js.map": "/star-wars-films/static/js/runtime-main.43d9769b.js.map",
+    "static/js/2.a9268556.chunk.js": "/star-wars-films/static/js/2.a9268556.chunk.js",
+    "static/js/2.a9268556.chunk.js.map": "/star-wars-films/static/js/2.a9268556.chunk.js.map",
+    "static/js/3.535c6d96.chunk.js": "/star-wars-films/static/js/3.535c6d96.chunk.js",
+    "static/js/3.535c6d96.chunk.js.map": "/star-wars-films/static/js/3.535c6d96.chunk.js.map",
+    "index.html": "/star-wars-films/index.html",
+    "static/css/main.be71bbe1.chunk.css.map": "/star-wars-films/static/css/main.be71bbe1.chunk.css.map",
+    "static/js/2.a9268556.chunk.js.LICENSE.txt": "/star-wars-films/static/js/2.a9268556.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/star-wars-films/static/media/stars.90c266f7.png",
+    "static/media/swlogo.com.f2b79c53.png": "/star-wars-films/static/media/swlogo.com.f2b79c53.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.43d9769b.js",
+    "static/js/2.a9268556.chunk.js",
+    "static/css/main.be71bbe1.chunk.css",
+    "static/js/main.1f418385.chunk.js"
+  ]
+}
