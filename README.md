@@ -1,3 +1,7 @@
+## A small app which allows getting a summary about every Star Wars movie and choose the user's favorite. The app uses an SWAPI-API for getting the data. For building this app I've used react hooks, local storage.
+
+![image](https://user-images.githubusercontent.com/63636407/154819423-584e7d4f-9ae9-4c0c-9659-08573e2c3c1f.png)
+
 # [Visit the page](https://Juliasavransky.github.io/star-wars-films)
 
 # Getting Started with Create React App
